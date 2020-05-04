@@ -5,8 +5,8 @@ from test_requests.api.tag import Tag
 
 
 class TestTag:
-    data = BaseApi.yaml_load("./data/test_tag.data.yaml")
-    steps = BaseApi.yaml_load("./data/test_tag.step.yaml")
+    data = BaseApi.yaml_load("../data/test_tag.data.yaml")
+    steps = BaseApi.yaml_load("../data/test_tag.step.yaml")
 
     @classmethod
     def setup_class(cls):
@@ -17,7 +17,7 @@ class TestTag:
         r = self.tag.get()
 
         assert r["errcode"] == 0
-        print(self.tag.jsonpath("$$..tag[?(@name !='')]"))
+        print(self.tag.jsonpath(f"$..tag[?(@name !='')]"))
 
     def test_add(self):
         r = self.tag.add("demo1")

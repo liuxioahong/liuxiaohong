@@ -5,7 +5,7 @@ class Tag(WeWork):
     secret = 'heLiPlmyblHRiKAgGWZky4-KdWqu1V22FeoFex8RfM0'
 
     def __init__(self):
-        self.data = self.api_load("../api/data/tag.api.yaml")
+        self.data = self.api_load("../data/tag.api.yaml")
         # print(self.data)
 
     # 获取
